@@ -1,0 +1,20 @@
+# Ignore git and editor files
+.git
+.gitignore
+*.swp
+*.swo
+*.tmp
+
+# Ignore local build and OS files
+*.exe
+*.out
+*.test
+*.DS_Store
+
+# Ignore IDE/project files
+.vscode
+.idea
+node_modules
+
+# Ignore database if you want to mount it as a volume (uncomment if needed)
+# forum.db 
