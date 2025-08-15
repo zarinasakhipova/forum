@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="winter">
+<head>
+    <meta charset="UTF-8">
+    <title>Error - Forum</title>
+    <link href="/static/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="/static/tailwind.js"></script>
+    <link href="/static/styles.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex flex-col">
+    <!-- Navigation Bar -->
+    <nav class="navbar bg-gradient-to-r from-white/90 to-blue-50/90 backdrop-blur-md shadow-lg border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-comments text-2xl text-blue-600"></i>
+                <a href="/" class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Forum
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="flex-1 flex items-center justify-center">
+        <div class="max-w-xl w-full bg-gradient-to-r from-white to-blue-50 rounded-xl shadow-lg p-10 border border-gray-100 text-center">
+            <div class="mb-6">
+                <i class="fas fa-exclamation-triangle text-5xl text-red-400 mb-4"></i>
+            </div>
+            <h1 class="text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4">Oops! Something went wrong</h1>
+            <p class="text-gray-700 text-lg mb-8">{{.Message}}</p>
+            <a href="/posts" class="btn text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <i class="fas fa-home mr-2"></i>
+                Back to Home
+            </a>
+        </div>
+    </div>
+</body>
+</html> 

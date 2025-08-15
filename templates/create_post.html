@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="winter">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Post - Forum</title>
+    <link href="/static/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="/static/tailwind.js"></script>
+    <link href="/static/styles.css" rel="stylesheet" type="text/css" />
+    <link href="/static/post.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex flex-col">
+    <!-- Navigation Bar -->
+    <nav class="main-navbar">
+        <div class="main-navbar-inner">
+            <a href="/" class="main-navbar-title">Forum</a>
+            <div class="main-navbar-links">
+                <a href="/posts{{if .CategoryFilter}}?category={{.CategoryFilter}}{{end}}" class="btn btn-sm btn-outline">Back to Posts</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex-1">
+        <div class="container mx-auto px-4 py-6">
+            <div class="max-w-4xl mx-auto">
+                <!-- Header -->
+                <div class="text-center mb-6">
+                    <h1 class="post-form-title">Create New Post</h1>
+                    <p class="post-form-subtitle">Share your thoughts with the community</p>
+                </div>
+
+                <!-- Create Post Form -->
+                <div class="post-form-container">
+                    <!-- Error Message -->
+                    {{if .Error}}
+                    <div class="alert alert-error mb-6">
+                        <span>{{.Error}}</span>
+                    </div>
+                    {{end}}
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <label for="title" class="post-form-label">Post Title</label>
+                        <input type="text" id="title" name="title" value="{{.Title}}" required class="post-form-input" placeholder="Enter a compelling title for your post" style="overflow-x:auto; white-space:nowrap;">
+
+                        <label for="content" class="post-form-label">Post Content</label>
+                        <textarea id="content" name="content" rows="6" required class="post-form-textarea" placeholder="Write your post content here..." style="overflow-y:auto; resize:vertical;">{{.Content}}</textarea>
+
+                        <label for="image" class="post-form-label">Add Image (Optional)</label>
+                        <input type="file" id="image" name="image" accept="image/*" class="post-form-input">
+                        <div style="font-size: 0.95rem; color: #888; margin-bottom: 1rem;">Supported formats: JPG, PNG, GIF (max 5MB)</div>
+
+                        <label class="post-form-label">Select Categories (Optional)</label>
+                        <div class="post-form-categories">
+                            {{range .Categories}}
+                            <label class="post-form-category-label">
+                                <input type="checkbox" class="post-form-checkbox" id="category_{{.ID}}" name="categories" value="{{.ID}}">
+                                {{.Name}}
+                            </label>
+                            {{end}}
+                        </div>
+                        <div style="font-size: 0.95rem; color: #888; margin-bottom: 1rem;">Leave unchecked to create a post without categories</div>
+
+                        {{if .CategoryFilter}}
+                        <input type="hidden" name="redirect_category" value="{{.CategoryFilter}}">
+                        {{end}}
+
+                        <div class="post-form-btn-row">
+                            <a href="/posts{{if .CategoryFilter}}?category={{.CategoryFilter}}{{end}}" class="post-form-btn cancel">Cancel</a>
+                            <button type="submit" class="post-form-btn">Publish Post</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-white to-blue-50 border-t py-6 mt-auto">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-600">&copy; 2025 Forum. Built with ❤️ for the community.</p>
+        </div>
+    </footer>
+</body>
+</html>
