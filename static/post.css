@@ -1,0 +1,115 @@
+/* Минималистичный стиль для форм постов */
+.post-form-container {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+.post-form-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+.post-form-subtitle {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+.post-form-label {
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+.post-form-input, .post-form-textarea {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+.post-form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+.post-form-checkbox {
+    margin-right: 0.5rem;
+}
+.post-form-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.post-form-category-label {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.3rem 0.7rem;
+    background: #f9fafb;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+.post-form-btn-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.post-form-btn {
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
+}
+.post-form-btn.cancel {
+    background: #e5e7eb;
+    color: #333;
+}
+.post-form-btn:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b47b6 100%);
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15);
+}
+.post-form-btn.cancel:hover {
+    background: #d1d5db;
+}
+
+/* Навигация и контейнер */
+.main-navbar {
+    background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(219,234,254,0.9));
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 8px #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.5rem 0;
+}
+.main-navbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-navbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+.main-navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+} 
